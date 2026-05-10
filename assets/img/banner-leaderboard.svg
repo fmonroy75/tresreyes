@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#020D1E"/>
+      <stop offset="50%" style="stop-color:#0C1A2D"/>
+      <stop offset="100%" style="stop-color:#1A2636"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#CB994E"/>
+      <stop offset="100%" style="stop-color:#D4A84B"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="728" height="90" fill="url(#bgGrad)"/>
+
+  <rect x="0" y="0" width="728" height="90" fill="url(#bgGrad)"/>
+  <path d="M0 0h728v90H0z" fill="url(#bgGrad)"/>
+
+  <g fill="none" stroke="rgba(203,153,78,0.1)" stroke-width="1">
+    <line x1="0" y1="22.5" x2="728" y2="22.5"/>
+    <line x1="0" y1="45" x2="728" y2="45"/>
+    <line x1="0" y1="67.5" x2="728" y2="67.5"/>
+    <line x1="182" y1="0" x2="182" y2="90"/>
+    <line x1="364" y1="0" x2="364" y2="90"/>
+    <line x1="546" y1="0" x2="546" y2="90"/>
+  </g>
+
+  <g transform="translate(30, 25)">
+    <path d="M0 0 C5.11736041 3.66043913 9.37449012 7.69873524 13.125 12.75 C13.846875 13.678125 14.56875 14.60625 15.3125 15.5625 C22.2077956 27.6887095 24.30043459 41.89272886 21.0625 55.5 C18.15307567 64.59707325 12.65363559 72.22912099 6.76171875 79.6171875 C-0.17550864 88.65710673 -1.59979153 97.49090016 -2.1875 108.6875 C-2.46031554 112.31804533 -2.83394828 114.33394828 -5.4375 116.9375 C-6.6440625 117.8346875 -6.6440625 117.8346875 -7.875 118.75 C-6.885 118.75 -5.895 118.75 -4.875 118.75 C-4.545 119.74 -4.215 120.73 -3.875 121.75 C-4.535 122.08 -5.195 122.41 -5.875 122.75 C-5.875 126.05 -5.875 129.35 -5.875 132.75 C-6.865 132.75 -7.855 132.75 -8.875 132.75 C-8.875 133.74 -8.875 134.73 -8.875 135.75 C-7.39 136.74 -7.39 136.74 -5.875 137.75 C-5.875 138.41 -5.875 139.07 -5.875 139.75 C-6.865 139.75 -7.855 139.75 -8.875 139.75 C-8.875 140.74 -8.875 141.73 -8.875 142.75 C-8.215 142.75 -7.555 142.75 -6.875 142.75 C-6.545 144.07 -6.215 145.39 -5.875 146.75 C-6.865 146.75 -7.855 146.75 -8.875 146.75" fill="#CB994E"/>
+  </g>
+
+  <text x="95" y="38" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">Ingenium</text>
+  <text x="95" y="55" font-family="Arial, sans-serif" font-size="10" fill="#CB994E">BRIGHT</text>
+
+  <text x="260" y="48" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">
+    Si tienes una <tspan fill="#CB994E">idea</tspan>, ya tienes una <tspan fill="#CB994E">web</tspan>
+  </text>
+
+  <rect x="600" y="30" width="100" height="24" rx="12" fill="url(#goldGrad)"/>
+  <text x="650" y="46" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#020D1E" text-anchor="middle">Ver más</text>
+
+  <circle cx="85" cy="20" r="40" fill="rgba(203,153,78,0.1)"/>
+  <circle cx="90" cy="70" r="25" fill="rgba(4,48,106,0.15)"/>
+  <circle cx="680" cy="25" r="30" fill="rgba(203,153,78,0.08)"/>
+</svg>
