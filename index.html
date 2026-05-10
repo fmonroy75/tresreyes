@@ -2,11 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Tres Reyes Conf | Encuadernación · Calendarios · Estampados · Disfraces</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Tres Reyes Conf | Anillados · Calendarios · Disfraces de Huaso</title>
     <!-- Tailwind CSS v3 + Google Fonts + Font Awesome -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tailwind custom configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -14,285 +13,323 @@
                     fontFamily: {
                         'sans': ['Inter', 'system-ui', 'sans-serif'],
                         'display': ['Playfair Display', 'serif'],
+                        'urban': ['Poppins', 'system-ui', 'sans-serif'],
                     },
                     colors: {
-                        'rey-gold': '#C8A951',
-                        'rey-deep': '#1E2A32',
-                        'rey-warm': '#F9F4EA',
-                        'rey-soft': '#F3EDE3',
+                        'rey-gold': '#F5B042',
+                        'rey-deep': '#1F2A3A',
+                        'rey-warm': '#FEF9F0',
+                        'rey-soft': '#FFF5E6',
+                        'huaso-red': '#D93B30',
+                        'accent-teal': '#2DAA9E',
+                        'ingenium-dark': '#0A0F1F',
+                        'ingenium-gold': '#FFD966',
+                        'ingenium-blue': '#2B5C8B',
                     },
                     animation: {
-                        'fade-up': 'fadeUp 0.7s ease-out forwards',
+                        'fade-up': 'fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards',
+                        'float': 'float 4s ease-in-out infinite',
                         'grow-slow': 'growGentle 0.4s ease-in-out',
+                        'pulse-ring': 'pulseRing 1.5s infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-in-bottom': 'slideInBottom 0.6s ease-out',
                     },
                     keyframes: {
                         fadeUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
                         },
                         growGentle: {
                             '0%': { transform: 'scale(1)' },
-                            '100%': { transform: 'scale(1.05)' },
+                            '100%': { transform: 'scale(1.08)' },
+                        },
+                        pulseRing: {
+                            '0%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(245,176,66,0.7)' },
+                            '70%': { transform: 'scale(1)', boxShadow: '0 0 0 15px rgba(245,176,66,0)' },
+                            '100%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(245,176,66,0)' },
+                        },
+                        glow: {
+                            '0%': { textShadow: '0 0 0px rgba(255,217,102,0.3)' },
+                            '100%': { textShadow: '0 0 8px rgba(255,217,102,0.8)' },
+                        },
+                        slideInBottom: {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
                         },
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         html {
             scroll-behavior: smooth;
         }
         body {
-            background-color: #F9F4EA;
+            background-color: #FEF9F0;
+            overflow-x: hidden;
         }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15); }
+        .gold-gradient { background: linear-gradient(135deg, #F5B042 0%, #E8922A 100%); }
+        .hero-overlay-modern { background: linear-gradient(100deg, rgba(31,42,58,0.92) 0%, rgba(31,42,58,0.65) 70%, rgba(45,170,158,0.4) 100%); }
+        .grow-hover { transition: transform 0.25s ease; }
+        .grow-hover:hover { transform: scale(1.05); }
+        .btn-modern { transition: all 0.2s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .btn-modern:hover { transform: translateY(-3px); box-shadow: 0 12px 20px -8px rgba(0,0,0,0.2); }
+        .instagram-gradient { background: linear-gradient(135deg, #feda77, #d62976, #962fbf, #4f5bd5); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); }
+        
+        /* IngeniumBright Premium Footer Styles */
+        .ingenium-footer {
+            background: linear-gradient(135deg, #0A0F1F 0%, #121A2F 50%, #0A0F1F 100%);
+            border-top: 2px solid rgba(255,217,102,0.3);
+            position: relative;
+            overflow: hidden;
         }
-        .hover-lift:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 30px -12px rgba(0, 0, 0, 0.12);
+        .ingenium-footer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,217,102,0.08) 0%, rgba(255,217,102,0) 70%);
+            pointer-events: none;
+            animation: rotateGlow 20s linear infinite;
         }
-        .gold-gradient {
-            background: linear-gradient(135deg, #D4AF37 0%, #B48C2C 100%);
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-        .gold-border-bottom {
-            border-bottom: 3px solid #C8A951;
+        .btn-ingenium {
+            background: linear-gradient(90deg, #FFD966, #F5B042, #E8922A);
+            background-size: 200% auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(245,176,66,0.4);
         }
-        .hero-overlay {
-            background: linear-gradient(120deg, rgba(30,42,50,0.88) 0%, rgba(30,42,50,0.7) 100%);
-        }
-        .grow-hover {
-            transition: transform 0.25s ease;
-        }
-        .grow-hover:hover {
+        .btn-ingenium:hover {
+            background-position: 100% 0;
             transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(245,176,66,0.7);
         }
-        .bg-subtle-pattern {
-            background-image: radial-gradient(#E5D9C5 1px, transparent 1px);
-            background-size: 28px 28px;
+        .glow-text {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glowText {
+            from { text-shadow: 0 0 5px rgba(255,217,102,0.3); }
+            to { text-shadow: 0 0 15px rgba(255,217,102,0.8); }
+        }
+        .mobile-stack {
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 768px) {
+            .mobile-stack {
+                flex-direction: row;
+            }
         }
     </style>
 </head>
 <body class="font-sans antialiased">
 
-    <!-- ========== HEADER / NAV (Sticky, glassmorphic) ========== -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-sm border-b border-gray-200/50">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div class="flex justify-between items-center h-20">
+    <!-- ========== HEADER MODERNO (Mobile First) ========== -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl shadow-md border-b border-gray-200/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
                 <div class="flex items-center gap-2">
-                    <div class="w-10 h-10 gold-gradient rounded-full flex items-center justify-center shadow-md">
-                        <i class="fas fa-crown text-white text-xl"></i>
+                    <div class="w-8 h-8 md:w-9 md:h-9 gold-gradient rounded-full flex items-center justify-center shadow-md animate-float">
+                        <i class="fas fa-crown text-white text-sm md:text-base"></i>
                     </div>
-                    <span class="text-2xl font-display font-bold tracking-tight text-rey-deep">Tres Reyes <span class="text-rey-gold">Conf</span></span>
+                    <span class="text-xl md:text-2xl lg:text-3xl font-display font-bold tracking-tight text-rey-deep">Tres Reyes <span class="text-rey-gold">Conf</span></span>
                 </div>
-                <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
-                    <a href="#inicio" class="hover:text-rey-gold transition">Inicio</a>
-                    <a href="#especialidades" class="hover:text-rey-gold transition">Especialidades</a>
-                    <a href="#galeria" class="hover:text-rey-gold transition">Inspiración</a>
-                    <a href="#contacto" class="hover:text-rey-gold transition">Contacto</a>
+                <div class="hidden md:flex space-x-6 lg:space-x-9 text-gray-700 font-semibold">
+                    <a href="#inicio" class="hover:text-rey-gold transition text-sm uppercase tracking-wide">Inicio</a>
+                    <a href="#especialidades" class="hover:text-rey-gold transition text-sm uppercase tracking-wide">Productos</a>
+                    <a href="#portafolio" class="hover:text-rey-gold transition text-sm uppercase tracking-wide">Portafolio</a>
+                    <a href="#contacto" class="hover:text-rey-gold transition text-sm uppercase tracking-wide">Contacto</a>
                 </div>
                 <div>
-                    <a href="#contacto" class="hidden md:inline-block bg-rey-deep text-white px-6 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-rey-gold hover:text-rey-deep transition duration-300">Consultar taller</a>
+                    <a href="#contacto" class="hidden md:inline-block bg-gradient-to-r from-rey-gold to-amber-600 text-rey-deep px-5 py-2 rounded-full text-sm font-bold shadow-md hover:shadow-xl transition-all btn-modern">Cotiza 🌟</a>
                     <button class="md:hidden text-2xl text-rey-deep"><i class="fas fa-bars"></i></button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- ========== HERO SECTION con imagen referencial ========== -->
-    <section id="inicio" class="relative bg-rey-deep text-white">
-        <!-- Imagen referencial (unsplash - taller artesanal) -->
-        <div class="absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1589829541892-9e0b8e28ec0a?q=80&w=2070&auto=format'); background-position: 35% 40%;"></div>
-        <div class="absolute inset-0 hero-overlay"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 py-28 md:py-36 lg:py-44">
-            <div class="max-w-3xl animate-[fadeUp_0.6s_ease-out]">
-                <span class="inline-block text-rey-gold font-semibold tracking-wider text-sm uppercase mb-3 border-l-4 border-rey-gold pl-3">Artesanía con propósito</span>
-                <h1 class="text-5xl md:text-7xl font-display font-bold leading-tight tracking-tight">Donde el papel,<br> la tela y la magia <span class="text-rey-gold">se unen</span></h1>
-                <p class="text-lg md:text-xl text-gray-200 mt-6 max-w-2xl leading-relaxed">Encuadernación artesanal, calendarios exclusivos, estampados creativos y disfraces que desatan sonrisas. Cada pieza cuenta una historia hecha a mano.</p>
-                <div class="flex flex-wrap gap-5 mt-10">
-                    <a href="#especialidades" class="bg-rey-gold text-rey-deep font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-white transition duration-300">Explorar colecciones <i class="fas fa-arrow-right ml-2"></i></a>
-                    <a href="#contacto" class="border border-white/40 text-white px-8 py-3 rounded-full hover:bg-white/10 transition">Hablar con el taller</a>
+    <!-- ========== HERO (Mobile First) ========== -->
+    <section id="inicio" class="relative overflow-hidden">
+        <div class="absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1567365026421-447f612b3b5d?q=80&w=2070&auto=format'); background-position: 30% 30%;"></div>
+        <div class="absolute inset-0 hero-overlay-modern"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-5 py-20 md:py-28 lg:py-40">
+            <div class="max-w-2xl animate-[fadeUp_0.6s_ease-out]">
+                <span class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-xs md:text-sm font-semibold text-white mb-4 border border-white/30"><i class="fas fa-chilean-peso text-rey-gold"></i> Hecho en Chile · Tradición viva</span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold leading-tight text-white drop-shadow-sm">Anillados, calendarios y <span class="text-rey-gold">disfraces de huaso</span> con 🧡</h1>
+                <p class="text-base md:text-lg lg:text-xl text-gray-100 mt-5 max-w-xl leading-relaxed">Diseño joven, raíces profundas. Productos únicos para colegios, oficinas y celebraciones patrias.</p>
+                <div class="flex flex-wrap gap-3 mt-8">
+                    <a href="#portafolio" class="bg-rey-gold text-rey-deep font-bold px-6 py-2.5 rounded-full shadow-xl hover:bg-white transition-all btn-modern text-sm md:text-base">Ver trabajos <i class="fas fa-arrow-right ml-2"></i></a>
+                    <a href="#contacto" class="bg-white/10 backdrop-blur border border-white/40 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-white/20 transition text-sm md:text-base">WhatsApp directo</a>
                 </div>
             </div>
         </div>
         <div class="absolute bottom-0 left-0 right-0">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" fill="#F9F4EA"><path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" fill="#FEF9F0"><path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path></svg>
         </div>
     </section>
 
-    <!-- ========== 4 ESPECIALIDADES (cards con iconos reales) ========== -->
-    <section id="especialidades" class="py-24 bg-rey-warm">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-rey-gold font-semibold tracking-wider text-sm uppercase">Nuestro oficio</span>
-                <h2 class="text-4xl md:text-5xl font-display font-bold text-rey-deep mt-2">Especialidades artesanales</h2>
-                <div class="w-24 h-1 bg-rey-gold mx-auto mt-4 rounded-full"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-5 text-lg">Técnicas tradicionales combinadas con diseño contemporáneo para niños y adultos.</p>
+    <!-- ========== 3 SERVICIOS (Mobile Grid) ========== -->
+    <section id="especialidades" class="py-16 md:py-24 bg-rey-warm">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="text-center mb-12">
+                <span class="text-rey-gold font-black tracking-wider text-xs uppercase bg-white px-3 py-1 rounded-full inline-block shadow-sm">✨ especialidades ✨</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-rey-deep mt-4">Lo que hacemos con pasión</h2>
+                <div class="w-20 h-1 bg-rey-gold mx-auto mt-4 rounded-full"></div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white rounded-2xl shadow-md hover-lift transition-all p-6 text-center gold-border-bottom"><div class="w-20 h-20 mx-auto bg-amber-50 rounded-full flex items-center justify-center mb-5 gold-gradient text-white shadow-sm"><i class="fas fa-book-open text-3xl"></i></div><h3 class="text-2xl font-display font-semibold text-rey-deep">Encuadernados</h3><p class="text-gray-600 mt-3 leading-relaxed">Cosido artesanal, pasta dura, lomos dorados. Cuadernos y álbumes eternos.</p><div class="mt-5 text-rey-gold text-sm font-medium">Saber más →</div></div>
-                <div class="bg-white rounded-2xl shadow-md hover-lift transition-all p-6 text-center gold-border-bottom"><div class="w-20 h-20 mx-auto bg-amber-50 rounded-full flex items-center justify-center mb-5 gold-gradient text-white"><i class="fas fa-calendar-alt text-3xl"></i></div><h3 class="text-2xl font-display font-semibold text-rey-deep">Calendarios</h3><p class="text-gray-600 mt-3 leading-relaxed">Calendarios de pared, mesa y magnéticos. Ilustraciones originales y papel sustentable.</p><div class="mt-5 text-rey-gold text-sm font-medium">Ediciones únicas →</div></div>
-                <div class="bg-white rounded-2xl shadow-md hover-lift transition-all p-6 text-center gold-border-bottom"><div class="w-20 h-20 mx-auto bg-amber-50 rounded-full flex items-center justify-center mb-5 gold-gradient text-white"><i class="fas fa-tshirt text-3xl"></i></div><h3 class="text-2xl font-display font-semibold text-rey-deep">Estampados</h3><p class="text-gray-600 mt-3 leading-relaxed">Sublimación y serigrafía sobre tela. Diseños lúdicos y motivos mágicos.</p><div class="mt-5 text-rey-gold text-sm font-medium">Texturas vibrantes →</div></div>
-                <div class="bg-white rounded-2xl shadow-md hover-lift transition-all p-6 text-center gold-border-bottom"><div class="w-20 h-20 mx-auto bg-amber-50 rounded-full flex items-center justify-center mb-5 gold-gradient text-white"><i class="fas fa-mask text-3xl"></i></div><h3 class="text-2xl font-display font-semibold text-rey-deep">Disfraces niños</h3><p class="text-gray-600 mt-3 leading-relaxed">Disfraces artesanales de superhéroes, animales y cuentos. Cómodos y seguros.</p><div class="mt-5 text-rey-gold text-sm font-medium">Aventura y juego →</div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== GALERÍA / INSPIRACIÓN con imágenes referenciales reales ========== -->
-    <section id="galeria" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-14">
-                <span class="text-rey-gold font-semibold tracking-wider">Portafolio visual</span>
-                <h2 class="text-4xl md:text-5xl font-display font-bold text-rey-deep mt-2">Creaciones que inspiran</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto mt-3">Mira algunos de nuestros proyectos recientes — encuadernaciones, estampados y disfraces llenos de color.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-                <!-- item 1 - encuadernación -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3] bg-cover bg-center transition duration-500 hover:scale-[1.02]" style="background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1974&auto=format'); background-position: center;">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-5 text-white bg-gradient-to-t from-black/70 to-transparent"><h3 class="text-xl font-bold">Libro artesanal</h3><p class="text-sm text-amber-100">Encuadernación con piel y dorado</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-white rounded-2xl shadow-xl hover-lift p-6 text-center border-b-4 border-transparent hover:border-rey-gold">
+                    <div class="w-20 h-20 mx-auto bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl flex items-center justify-center mb-5 gold-gradient text-white shadow-md"><i class="fas fa-ring text-3xl"></i></div>
+                    <h3 class="text-xl md:text-2xl font-urban font-black text-rey-deep">Anillados & Wire-O</h3>
+                    <p class="text-gray-600 mt-2 text-sm md:text-base">Cuadernos profesionales, agendas personalizadas, espiral doble y acabados de lujo.</p>
+                    <div class="mt-4 text-rey-gold font-bold text-xs">🎯 100% personalizable →</div>
                 </div>
-                <!-- item 2 - calendario ilustrado -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506784365847-bbad939e9335?q=80&w=2068&auto=format'); background-position: center 40%;">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-5 text-white bg-gradient-to-t from-black/70 to-transparent"><h3 class="text-xl font-bold">Calendario mural 2026</h3><p class="text-sm text-amber-100">Ilustraciones acuarela, papel ecológico</p></div>
+                <div class="bg-white rounded-2xl shadow-xl hover-lift p-6 text-center border-b-4 border-transparent hover:border-rey-gold">
+                    <div class="w-20 h-20 mx-auto bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl flex items-center justify-center mb-5 gold-gradient text-white"><i class="fas fa-calendar-check text-3xl"></i></div>
+                    <h3 class="text-xl md:text-2xl font-urban font-black text-rey-deep">Calendarios Únicos</h3>
+                    <p class="text-gray-600 mt-2 text-sm md:text-base">Murales, de mesa y magnéticos con ilustraciones originales y temáticas chilenas.</p>
+                    <div class="mt-4 text-rey-gold font-bold text-xs">📅 Ediciones limitadas →</div>
                 </div>
-                <!-- item 3 - estampado infantil -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1518834107812-67b0b7c58434?q=80&w=1974&auto=format'); background-position: 45% 30%;">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-5 text-white bg-gradient-to-t from-black/70 to-transparent"><h3 class="text-xl font-bold">Estampado dragón niños</h3><p class="text-sm text-amber-100">Sublimación en camisetas orgánicas</p></div>
-                </div>
-                <!-- item 4 - disfraces creativos -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596462502278-6e2b09cfc5f2?q=80&w=2070&auto=format'); background-position: 30% 20%;">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-5 text-white bg-gradient-to-t from-black/70 to-transparent"><h3 class="text-xl font-bold">Disfraz hada / duende</h3><p class="text-sm text-amber-100">Tul suave + lentejuelas recicladas</p></div>
-                </div>
-                <!-- item 5 - cuaderno personalizado -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2076&auto=format'); background-position: center;">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-5 text-white bg-gradient-to-t from-black/70 to-transparent"><h3 class="text-xl font-bold">Cuaderno artesanal</h3><p class="text-sm text-amber-100">Papel verjurado + cierre magnético</p></div>
-                </div>
-                <!-- item 6 - disfraces reyes magos -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1603201667141-5a2d37b2b0b4?q=80&w=1974&auto=format'); background-position: 70% 20%;">
-                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-5 text-white bg-gradient-to-t from-black/70 to-transparent"><h3 class="text-xl font-bold">Set disfraces reyes magos</h3><p class="text-sm text-amber-100">Edición especial familiar</p></div>
+                <div class="bg-white rounded-2xl shadow-xl hover-lift p-6 text-center border-b-4 border-transparent hover:border-rey-gold">
+                    <div class="w-20 h-20 mx-auto bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl flex items-center justify-center mb-5 gold-gradient text-white"><i class="fas fa-hat-cowboy text-3xl"></i></div>
+                    <h3 class="text-xl md:text-2xl font-urban font-black text-rey-deep">Disfraces Huaso</h3>
+                    <p class="text-gray-600 mt-2 text-sm md:text-base">Trajes típicos para niños y adultos: chamantos, sombreros, pañuelos bordados.</p>
+                    <div class="mt-4 text-rey-gold font-bold text-xs">🤠 Tradición que emociona →</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== BANNER DE CALIDAD (inspiración texturas) ========== -->
-    <div class="bg-rey-deep text-white py-16 bg-subtle-pattern">
-        <div class="max-w-6xl mx-auto px-6 text-center relative z-2">
-            <i class="fas fa-feather-alt text-rey-gold text-4xl mb-4"></i>
-            <h3 class="text-3xl font-display font-semibold">Hecho a mano con dedicación</h3>
-            <p class="text-gray-300 max-w-2xl mx-auto mt-3">Cada calendario, encuadernación, estampado y disfraz es producido con amor por nuestro taller, utilizando materiales nobles y tintas amigables con la infancia.</p>
-            <div class="flex flex-wrap justify-center gap-10 mt-10 text-sm font-mono"><div><span class="font-bold block text-rey-gold text-2xl">+850</span> piezas realizadas</div><div><span class="font-bold block text-rey-gold text-2xl">4</span> especialidades</div><div><span class="font-bold block text-rey-gold text-2xl">100%</span> personalizable</div></div>
+    <!-- ========== PORTAFOLIO (Responsive Grid) ========== -->
+    <section id="portafolio" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="text-center mb-10 md:mb-14">
+                <span class="text-rey-gold font-black tracking-wide uppercase text-xs bg-amber-50 px-3 py-1 rounded-full inline-block">📸 trabajos recientes</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-rey-deep mt-3">Inspírate con nuestro arte</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
+                <div class="group relative overflow-hidden rounded-xl shadow-2xl aspect-[4/3] bg-cover bg-center transition-all duration-500 hover:scale-[1.02]" style="background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2076&auto=format');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white"><h3 class="text-xl font-black">✨ Anillado premium</h3><span class="inline-block mt-1 bg-rey-gold text-rey-deep text-xs font-bold px-2 py-0.5 rounded-full">Anillados</span></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-2xl aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506784365847-bbad939e9335?q=80&w=2068&auto=format');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white"><h3 class="text-xl font-black">🗓️ Calendario patrimonial</h3><span class="inline-block mt-1 bg-rey-gold text-rey-deep text-xs font-bold px-2 py-0.5 rounded-full">Calendarios</span></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-2xl aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1518834107812-67b0b7c58434?q=80&w=1974&auto=format');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white"><h3 class="text-xl font-black">🤠 Huaso infantil</h3><span class="inline-block mt-1 bg-rey-gold text-rey-deep text-xs font-bold px-2 py-0.5 rounded-full">Disfraces Huaso</span></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-2xl aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1974&auto=format');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white"><h3 class="text-xl font-black">🎨 Agenda anillada</h3><span class="inline-block mt-1 bg-rey-gold text-rey-deep text-xs font-bold px-2 py-0.5 rounded-full">Anillados</span></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-2xl aspect-[4/3] bg-cover bg-center" style="background-image: url('https://plus.unsplash.com/premium_photo-1676637000052-5cac8ed7a2b4?q=80&w=2070&auto=format');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white"><h3 class="text-xl font-black">📆 Calendario creativo</h3><span class="inline-block mt-1 bg-rey-gold text-rey-deep text-xs font-bold px-2 py-0.5 rounded-full">Calendarios</span></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-2xl aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1603201667141-5a2d37b2b0b4?q=80&w=1974&auto=format');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white"><h3 class="text-xl font-black">💃 Pareja huasa</h3><span class="inline-block mt-1 bg-rey-gold text-rey-deep text-xs font-bold px-2 py-0.5 rounded-full">Disfraces Huaso</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BANNER INTERACTIVO ========== -->
+    <div class="bg-gradient-to-r from-rey-deep to-accent-teal text-white py-12 md:py-16">
+        <div class="max-w-6xl mx-auto px-5 text-center">
+            <i class="fas fa-heart text-rey-gold text-4xl md:text-5xl mb-3 animate-pulse"></i>
+            <h3 class="text-2xl md:text-4xl font-display font-bold">¿Buscas calidad + diseño juvenil?</h3>
+            <p class="text-gray-200 max-w-2xl mx-auto mt-2 text-sm md:text-base">Miles de clientes confían en nuestros productos. ¡Únete a la comunidad Tres Reyes!</p>
+            <div class="flex flex-wrap justify-center gap-6 mt-6"><div><span class="font-black text-2xl md:text-3xl text-rey-gold">+1.500</span><p class="text-xs">productos entregados</p></div><div><span class="font-black text-2xl md:text-3xl text-rey-gold">100%</span><p class="text-xs">satisfacción</p></div><div><span class="font-black text-2xl md:text-3xl text-rey-gold">⭐⭐⭐⭐⭐</span><p class="text-xs">opiniones reales</p></div></div>
         </div>
     </div>
 
-    <!-- ========== SECCIÓN DE CONTACTO: estilo similar a terapiasfuncionales.cl (sin formulario, más visual) ========== -->
-    <section id="contacto" class="py-24 bg-rey-soft relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <span class="text-rey-gold font-semibold uppercase tracking-wide text-sm">Conecta con el taller</span>
-                <h2 class="text-4xl md:text-5xl font-display font-bold text-rey-deep mt-2">Hagamos realidad tu idea</h2>
-                <div class="w-20 h-1 bg-rey-gold mx-auto mt-4 rounded-full"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-5 text-lg">Pedidos personalizados, cotizaciones sin compromiso o simplemente charlar sobre tu proyecto creativo. Estamos para asesorarte.</p>
+    <!-- ========== CONTACTO ========== -->
+    <section id="contacto" class="py-16 md:py-24 bg-rey-soft">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="text-center mb-10">
+                <span class="bg-black/5 text-rey-deep font-black px-3 py-1 rounded-full text-xs">📢 hablemos sin compromiso</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-rey-deep mt-3">¿Quieres cotizar?</h2>
             </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <!-- columna izquierda: info + tarjetas contacto (sin form) -->
-                <div class="space-y-8">
-                    <div class="bg-white rounded-3xl shadow-lg p-8 hover-lift transition">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 gold-gradient rounded-full flex items-center justify-center shadow-md"><i class="fas fa-store text-2xl text-white"></i></div>
-                            <div><h3 class="text-2xl font-display font-bold text-rey-deep">Visita nuestro taller</h3><p class="text-gray-500">Calle de los Artesanos 123, Santiago · Horario flexible con cita previa</p></div>
-                        </div>
-                        <div class="mt-5 pl-2 border-l-4 border-rey-gold"><p class="text-gray-600 italic">“Podrás ver los materiales, encuadernaciones en vivo y retazos de telas para estampados y disfraces.”</p></div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="bg-white/80 rounded-2xl p-6 shadow-sm text-center backdrop-blur-sm hover:shadow-md transition">
-                            <i class="fab fa-whatsapp text-3xl text-green-600"></i>
-                            <p class="font-semibold mt-2 text-rey-deep">WhatsApp</p>
-                            <p class="text-sm text-gray-500">+56 9 4444 1234</p>
-                            <span class="text-xs text-rey-gold">Respuesta en minutos</span>
-                        </div>
-                        <div class="bg-white/80 rounded-2xl p-6 shadow-sm text-center backdrop-blur-sm hover:shadow-md transition">
-                            <i class="fas fa-envelope text-3xl text-rey-gold"></i>
-                            <p class="font-semibold mt-2 text-rey-deep">Correo electrónico</p>
-                            <p class="text-sm text-gray-500">hola@tresreyesconf.cl</p>
-                            <span class="text-xs text-rey-gold">Cotizaciones 24h</span>
-                        </div>
-                        <div class="bg-white/80 rounded-2xl p-6 shadow-sm text-center backdrop-blur-sm hover:shadow-md transition">
-                            <i class="fab fa-instagram text-3xl text-rose-400"></i>
-                            <p class="font-semibold mt-2 text-rey-deep">@tresreyesconf</p>
-                            <p class="text-sm text-gray-500">Explora nuestro feed</p>
-                        </div>
-                        <div class="bg-white/80 rounded-2xl p-6 shadow-sm text-center backdrop-blur-sm hover:shadow-md transition">
-                            <i class="fas fa-calendar-check text-3xl text-amber-700"></i>
-                            <p class="font-semibold mt-2 text-rey-deep">Agenda una cita</p>
-                            <p class="text-sm text-gray-500">Asesoría personalizada en el taller</p>
-                        </div>
-                    </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-5">
+                    <div class="bg-white rounded-xl p-5 shadow-lg flex items-center gap-4 flex-wrap sm:flex-nowrap"><div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl text-green-600"><i class="fab fa-whatsapp"></i></div><div><h3 class="font-black">WhatsApp</h3><p class="text-gray-500 text-sm">+56 9 4444 1234</p></div><a href="#" class="ml-auto bg-rey-deep text-white px-4 py-2 rounded-full text-xs">Escribir →</a></div>
+                    <div class="bg-white rounded-xl p-5 shadow-lg flex items-center gap-4 flex-wrap sm:flex-nowrap"><div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-2xl text-rey-gold"><i class="fas fa-envelope"></i></div><div><h3 class="font-black">Email</h3><p class="text-gray-500 text-sm">hola@tresreyesconf.cl</p></div><a href="#" class="ml-auto bg-rey-deep text-white px-4 py-2 rounded-full text-xs">Enviar →</a></div>
+                    <div class="bg-white rounded-xl p-5 shadow-lg flex items-center gap-4 flex-wrap sm:flex-nowrap"><div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center text-2xl text-rose-400"><i class="fab fa-instagram"></i></div><div><h3 class="font-black">@tresreyesconf</h3><p class="text-gray-500 text-sm">DM abierto</p></div><a href="#" class="ml-auto bg-rey-deep text-white px-4 py-2 rounded-full text-xs">Seguir →</a></div>
                 </div>
-
-                <!-- columna derecha: una tarjeta más destacada con testimonio + botones (sin formulario) -->
-                <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-10 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-40 h-40 bg-rey-gold/10 rounded-full blur-3xl"></div>
-                    <div class="relative z-2">
-                        <i class="fas fa-quote-left text-rey-gold text-3xl opacity-40"></i>
-                        <p class="text-gray-700 text-lg leading-relaxed mt-2">“El equipo de Tres Reyes Conf transformó nuestras ideas en disfraces únicos para el jardín infantil. Los niños quedaron fascinados con los detalles y la comodidad. Profesionales y cálidos.”</p>
-                        <div class="flex items-center gap-3 mt-6"><div class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-white text-xl font-bold">MF</div><div><strong class="block text-rey-deep">María Fernanda López</strong><span class="text-yellow-400 text-sm">★★★★★</span><p class="text-xs text-gray-400">Directora Jardín Arcoíris</p></div></div>
-                        <div class="mt-8 pt-4 border-t border-gray-200 flex flex-wrap gap-4 justify-between items-center">
-                            <div><span class="text-rey-gold font-bold text-2xl">📞 +56 9 4444 1234</span></div>
-                            <div class="flex gap-3">
-                                <a href="#" class="bg-rey-deep text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-rey-gold hover:text-rey-deep transition shadow">WhatsApp directo</a>
-                                <a href="#" class="border border-rey-deep text-rey-deep px-5 py-2 rounded-full text-sm font-semibold hover:bg-rey-deep hover:text-white transition">Email taller</a>
-                            </div>
-                        </div>
-                        <p class="text-xs text-center text-gray-400 mt-6">Sin compromiso · Respondemos máximo 24 horas</p>
-                    </div>
-                </div>
+                <div class="bg-gradient-to-br from-white to-amber-50 rounded-2xl shadow-2xl p-6 md:p-8"><i class="fas fa-quote-left text-rey-gold text-3xl opacity-40"></i><p class="text-gray-700 text-base leading-relaxed mt-2">“Los anillados fueron perfectos y los disfraces de huaso dejaron a todos impresionados. 100% recomendados”</p><div class="flex items-center gap-3 mt-4"><div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-white text-sm font-bold">RV</div><div><p class="font-black text-sm">Ricardo Valenzuela</p><div class="text-yellow-400 text-xs">★★★★★</div></div></div><div class="mt-6 flex flex-wrap gap-3 justify-between items-center"><div class="font-black text-lg text-rey-gold">📞 +56 9 4444 1234</div><a href="#" class="bg-rey-deep text-white px-5 py-2 rounded-full text-sm font-bold shadow-md hover:bg-rey-gold transition">WhatsApp YA</a></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========== FOOTER con "desarrollado por IngeniumBright" + enlace y efecto grow ========== -->
-    <footer class="bg-rey-deep text-white/80 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-                <div class="col-span-1 md:col-span-1">
-                    <div class="flex items-center gap-2"><div class="w-8 h-8 gold-gradient rounded-full flex items-center justify-center"><i class="fas fa-crown text-white text-xs"></i></div><span class="font-display font-bold text-xl text-white">Tres Reyes Conf</span></div>
-                    <p class="text-gray-400 text-sm mt-3">Fábrica creativa de momentos inolvidables a través del papel, la tela y el juego.</p>
-                </div>
-                <div><h4 class="font-semibold text-white">Especialidades</h4><ul class="mt-3 space-y-2 text-sm"><li>Encuadernación</li><li>Calendarios ilustrados</li><li>Estampados infantiles</li><li>Disfraces artesanales</li></ul></div>
-                <div><h4 class="font-semibold text-white">Horario taller</h4><ul class="mt-3 space-y-2 text-sm"><li>Lun - Vie: 10am a 7pm</li><li>Sábados con cita previa</li><li>Domingo: cerrado</li><li>Envíos a todo Chile</li></ul></div>
-                <div><h4 class="font-semibold text-white">Newsletter creativo</h4><div class="mt-2 flex"><input type="email" placeholder="tu@email.com" class="bg-white/10 rounded-l-xl px-4 py-2 w-full text-sm text-white"><button class="bg-rey-gold px-4 rounded-r-xl text-rey-deep font-bold">→</button></div><p class="text-xs text-gray-400 mt-2">Inspiración, talleres y novedades.</p></div>
+    <!-- ========== FOOTER INGENIUMBRIGHT PROFESIONAL (ancho completo, mobile first, efectos premium) ========== -->
+    <footer class="ingenium-footer w-full mt-0">
+        <!-- Barra superior de marca Tres Reyes -->
+        <div class="max-w-7xl mx-auto px-5 pt-10 pb-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-white/80">
+                <div><div class="flex items-center gap-2 mb-3"><div class="w-8 h-8 gold-gradient rounded-full flex items-center justify-center"><i class="fas fa-crown text-white text-xs"></i></div><span class="font-display font-bold text-xl text-white">Tres Reyes Conf</span></div><p class="text-gray-300 text-xs">Anillados vibrantes, calendarios con alma y disfraces de huaso que celebran nuestra identidad.</p></div>
+                <div><h4 class="font-black text-white text-sm">✨ Productos</h4><ul class="mt-3 space-y-1 text-xs"><li>Anillados premium</li><li>Calendarios personalizados</li><li>Disfraces Huaso infantil</li></ul></div>
+                <div><h4 class="font-black text-white text-sm">⚡ Enlaces</h4><ul class="mt-3 space-y-1 text-xs"><li><a href="#inicio" class="hover:text-rey-gold">Inicio</a></li><li><a href="#portafolio" class="hover:text-rey-gold">Portafolio</a></li><li><a href="#contacto" class="hover:text-rey-gold">Contacto</a></li></ul></div>
+                <div class="bg-white/10 rounded-xl p-3 text-center"><i class="fab fa-instagram text-2xl text-rey-gold mb-1 block"></i><h4 class="font-black text-white text-sm">@tresreyesconf</h4><a href="https://instagram.com/tresreyesconf" target="_blank" class="inline-block mt-2 bg-gradient-to-r from-[#feda77] via-[#d62976] to-[#962fbf] text-white font-bold px-3 py-1.5 rounded-full text-xs w-full">Síguenos 📸</a></div>
             </div>
-            <div class="border-t border-white/20 mt-12 pt-8 text-center text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center gap-2">
-                <span>© 2025 Tres Reyes Conf — Hecho con ✦ tradición artesanal.</span>
-                <!-- enlace con efecto grow y referencia a IngeniumBright -->
-                <a href="https://ingeniumbright.com" target="_blank" rel="noopener noreferrer" class="inline-block text-rey-gold hover:text-amber-300 transition-all duration-300 grow-hover font-medium">desarrollado por IngeniumBright <i class="fas fa-external-link-alt text-xs ml-1"></i></a>
+        </div>
+        
+        <!-- SECCIÓN INGENIUMBRIGHT: profesional, ancho completo, efectos glow y gradientes -->
+        <div class="w-full bg-gradient-to-r from-[#0A0F1F] via-[#121A2F] to-[#0A0F1F] border-t border-[#FFD966]/30 border-b border-[#FFD966]/30 mt-6">
+            <div class="max-w-7xl mx-auto px-5 py-6 md:py-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFD966] to-[#E8922A] flex items-center justify-center shadow-xl animate-pulse">
+                            <i class="fas fa-code text-[#0A0F1F] text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-[#FFD966] text-xs font-bold tracking-wider">DESARROLLO TECNOLÓGICO DE ALTA PERFORMANCE</p>
+                            <h3 class="text-white font-black text-lg md:text-xl glow-text" style="animation: glowText 2s infinite alternate;">IngeniumBright</h3>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center">
+                        <a href="https://ingeniumbright.com" target="_blank" rel="noopener noreferrer" class="btn-ingenium text-[#0A0F1F] font-black px-6 py-2.5 rounded-full text-sm flex items-center gap-2 transition-all duration-300">
+                            🚀 CONTRATAR SERVICIOS <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <span class="text-gray-400 text-xs flex items-center gap-1"><i class="fas fa-chart-line text-[#FFD966]"></i> +120 proyectos exitosos</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center md:justify-between items-center gap-3 mt-5 pt-4 border-t border-white/10 text-[10px] text-gray-400">
+                    <span>© 2025 Tres Reyes Conf — Hecho con pasión chilena y tradición de huaso 🇨🇱</span>
+                    <a href="https://ingeniumbright.com" target="_blank" class="hover:text-[#FFD966] transition flex items-center gap-1">Desarrollado con <i class="fas fa-heart text-red-400 text-xs"></i> por IngeniumBright — Soluciones web que venden</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- small script for smooth anchor links -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
                 if(targetId === "#" || targetId === "") return;
                 const targetElem = document.querySelector(targetId);
-                if(targetElem) {
-                    e.preventDefault();
-                    targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if(targetElem) { e.preventDefault(); targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
     </script>
